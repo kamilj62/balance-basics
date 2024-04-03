@@ -1,0 +1,47 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>balance-basics</title>
+    <link rel="stylesheet" href="/css/jass.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <div class="justify-space-around">
+      <header class="row">
+        <nav>
+          <ul class="navbar">
+            <li><a class="link" href="/">Home</a></li>
+            <li><a class="link" href="/workout">Workout</a></li>
+            <!-- Conditionally render login or logout links -->
+            {{#if logged_in}}
+
+              <li><button
+                  class="btn btn-secondary"
+                  id="logout"
+                >logout</button></li>
+            {{else}}
+              <li><a href="/login">login</a></li>
+            {{/if}}
+          </ul>
+        </nav>
+
+      </header>
+      <main class="container container-fluid mt-5">
+        <!-- Render the sub layout -->
+        {{{body}}}
+      </main>
+      <footer>
+
+      </footer>
+    </div>
+
+    {{! <Render script for logged in users only --> }}
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
+
+</html>
