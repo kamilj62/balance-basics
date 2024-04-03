@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{username}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Workout:</h3>
+
+    <form class="form new-workout-form">
+      <div class="form-group">
+        <label for="created_at-name">Workout created_at:</label>
+        <input
+          class="form-input"
+          type="text"
+          id="created_at"
+          name="created_at"
+        />
+      </div>
+      <div class="form-group">
+        <label for="workout-title">Workout title:</label>
+        <input
+          class="form-input"
+          type="text"
+          id="workout-title"
+          name="workout-title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="workout">Workout:</label>
+        <textarea class="form-input" id="workout" name="workout"></textarea>
+      </div>
+      <div class="form-group">
+        <button
+          type="submit"
+          id="workout"
+          class="btn btn-primary"
+        >Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if workouts.length}}
+    <div class="col-md-6 project-list">
+      <h3>Current Workout:</h3>
+
+      {{#each workouts as |workout|}}
+        <div class="row mb-2">
+          <div class="col-md-8">
+            <h4><a href="/workout/{{workout.id}}">{{workout.name}}</a></h4>
+          </div>
+          <p>
+            <strong>{{workout.title}}</strong>
+          </p>
+          <p>
+            {{workout.workout}}
+          </p>
+          <div class="col-md-4 btn-delete">
+            <button
+              class="btn btn-sm btn-danger"
+              type="delete"
+              data-id="{{workout.id}}"
+            >DELETE</button>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>
+
+<script src="./js/workout.js"></script>
