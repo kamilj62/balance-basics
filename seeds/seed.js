@@ -1,8 +1,10 @@
+
 const sequelize = require("../config/connection");
 const { User, Workout } = require("../models");
 
 const userData = require("./userData.json");
 const workoutData = require("./workoutData.json");
+
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -11,6 +13,7 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
+
 
   for (const workout of workoutData) {
     await Workout.create({
@@ -21,5 +24,6 @@ const seedDatabase = async () => {
 
   process.exit(0);
 };
+
 
 seedDatabase();
