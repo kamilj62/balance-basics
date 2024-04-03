@@ -19,6 +19,7 @@ User.init(
     username: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: true,
     },
     email: {
       type: DataTypes.STRING,
@@ -36,7 +37,7 @@ User.init(
       },
     },
     weight: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     height: {

@@ -1,0 +1,22 @@
+[
+    {
+    "name": "Sal",
+    "title": "Bench Press",
+    "workout": "5 x 155",
+    "created_at": "04/1/2024"
+    
+},
+{   "name": "Lernantino",
+    "title": "Biceps Curls",
+    "workout": "5 x 35",
+    "created_at": "04/1/2024"
+    
+},
+{   "name": "Amiko",
+    "title": "Triceps Curls",
+    "workout": "5 x 30",
+    "created_at": "04/1/2024"
+
+
+}
+]

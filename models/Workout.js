@@ -21,15 +21,11 @@ Workout.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      //allowNull: false,
       references: {
         model: "user",
         key: "id",
       },
-    },
-    status: {
-      type: DataTypes.STRING,
-      allowNull: false,
     },
     created_at: {
       type: DataTypes.DATE,
