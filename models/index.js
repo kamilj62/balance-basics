@@ -7,7 +7,7 @@ User.hasMany(Workout, {
 });
 
 Workout.belongsTo(User, {
-  foreignKey: "id",
+  foreignKey: "user_id",
   onDelete: "CASCADE",
 });
 
