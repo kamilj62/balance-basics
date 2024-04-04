@@ -1,0 +1,21 @@
+<!-- Loop over each object in the projects array -->
+{{#each workouts as |workout|}}
+  <div class="row mb-4 project">
+    <div class="col-md-5">
+      <h2>
+        <a href="/blog/{{workout.id}}">{{workout.title}}</a>
+
+      </h2>
+      <p>
+        Workout:
+        {{workout.workout}}
+      </p>
+    </div>
+    <div class="col-md-7">
+      <p>
+        {{workout.created_at}}
+        {{workout.user_id}}
+      </p>
+    </div>
+  </div>
+{{/each}}
