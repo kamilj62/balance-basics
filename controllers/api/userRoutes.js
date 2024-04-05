@@ -17,22 +17,6 @@ router.post("/", ensureAuthenticated, async (req, res) => {
   }
 });
 
-// router.post("/normal", async (req, res) => {
-//   try {
-//     const normalData = await User.findAll(req.body);
-
-//     const user = normalData.get({ plain: true });
-
-//     console.log(user);
-
-//     res.render("normal", {
-//       ...user,
-//     });
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
-
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
