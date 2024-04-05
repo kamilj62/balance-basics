@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { User, Workout } = require("../../models");
 const { ensureAuthenticated } = require("../../utils/ensureAuthenticated");
 
-router.post("/", async (req, res) => {
+router.post("/", ensureAuthenticated, async (req, res) => {
   try {
     const userData = await User.create(req.body);
 
@@ -16,6 +16,22 @@ router.post("/", async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+// router.post("/normal", async (req, res) => {
+//   try {
+//     const normalData = await User.findAll(req.body);
+
+//     const user = normalData.get({ plain: true });
+
+//     console.log(user);
+
+//     res.render("normal", {
+//       ...user,
+//     });
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
 
 router.post("/login", async (req, res) => {
   try {
