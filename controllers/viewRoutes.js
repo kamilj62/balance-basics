@@ -41,11 +41,6 @@ router.get("/workout", ensureAuthenticated, async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
-router.get("/workouts/:id", async (req, res) => {
-  try {
-    const exercise = await Workout.findByPk(req.params.id, {});
-=======
 router.get("/workout/:id", async (req, res) => {
   try {
     const exercise = await Workout.findByPk(req.params.id, {
@@ -53,7 +48,6 @@ router.get("/workout/:id", async (req, res) => {
     });
 
     console.log(exercise);
->>>>>>> 7a28e790a3969ec265a3af801a76cb7a74b06148
 
     if (!exercise) {
       return res.status(404).json({ msg: "Exercise not found" });
@@ -61,11 +55,8 @@ router.get("/workout/:id", async (req, res) => {
 
     const workout = exercise.get({ plain: true });
 
-<<<<<<< HEAD
-=======
     console.log(workout);
 
->>>>>>> 7a28e790a3969ec265a3af801a76cb7a74b06148
     res.render("blog", {
       ...workout,
       owner: req.session.user_id === workout.user_id,
