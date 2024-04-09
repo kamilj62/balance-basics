@@ -3,8 +3,38 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 body {
     background-image: url(/public/images/Project-background.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+#navbar {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    display: block;
+    transition: top 0.3s;
+
+}
+  
+#navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 20px;
+}
+  
+#navbar a:hover {
+    background-color: #ddd;
+    color: #001325;
 }
