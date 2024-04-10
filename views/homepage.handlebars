@@ -1,10 +1,10 @@
-<!-- Loop over each object in the projects array -->
+<!-- Loop over each object in the workouts array -->
+
 {{#each workouts as |workout|}}
   <div class="row mb-4 project">
     <div class="col-md-5">
       <h2>
         <a href="/workouts/{{workout.id}}">{{workout.title}}</a>
-
       </h2>
       <p>
         Workout:
@@ -13,8 +13,7 @@
     </div>
     <div class="col-md-7">
       <p>
-        {{workout.created_at}}
-        {{workout.user_id}}
+        {{format_date workout.created_at}}
       </p>
     </div>
   </div>
