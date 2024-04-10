@@ -41,15 +41,21 @@ router.get("/workout", ensureAuthenticated, async (req, res) => {
   }
 });
 
-router.get("/workouts/:id", async (req, res) => {
+router.get("/workout/:id", async (req, res) => {
   try {
-    const exercise = await Workout.findByPk(req.params.id, {});
+    const exercise = await Workout.findByPk(req.params.id, {
+      //include: [{ include: [{ model: User }] }],
+    });
+
+    console.log(exercise);
 
     if (!exercise) {
       return res.status(404).json({ msg: "Exercise not found" });
     }
 
     const workout = exercise.get({ plain: true });
+
+    console.log(workout);
 
     res.render("blog", {
       ...workout,
