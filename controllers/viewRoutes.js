@@ -83,6 +83,14 @@ router.get("/normal", (req, res) => {
   res.render("normal");
 });
 
+router.get("/overweight", (req, res) => {
+  res.render("overweight");
+});
+
+router.get("/underweight", (req, res) => {
+  res.render("underweight");
+});
+
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
