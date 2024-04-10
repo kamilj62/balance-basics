@@ -5,13 +5,42 @@ const exphbs = require("express-handlebars");
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+<<<<<<< HEAD
 const handlebars = require('express-handlebars');
+=======
+const helpers = require("./utils/helpers");
+const helmet = require("helmet");
+>>>>>>> 234894413f32ce681c20842e1b589b8bb10f89ed
 
 const app = express();
 
 const PORT = process.env.PORT || 3001;
 
-const hbs = exphbs.create({});
+// This disables the Content-Security-Policy
+// and X-Download-Options headers.
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+    xDownloadOptions: false,
+  })
+);
+
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        "connect-src": [
+          "'self'",
+          "https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises",
+          "https://gym-fit.p.rapidapi.com/exercises/search",
+          "gym-fit.p.rapidapi.com",
+        ],
+      },
+    },
+  })
+);
+
+const hbs = exphbs.create({ helpers });
 
 const sess = {
   secret: "Super secret secret",

@@ -15,10 +15,12 @@ const bmiHandler = async (event) => {
   console.log(bmiResult);
   resultElement.innerHTML = `Your BMI is: ${bmiResult}`;
 
-  if (bmiResult >= 18.5 && bmiResult <= 24.9) {
+  if (bmiResult > 25) {
+    window.location.href = "/overweight";
+  } else if (bmiResult >= 18.5 && bmiResult <= 24.9) {
     window.location.href = "/normal";
-  } else {
-    alert("Not normal BMI");
+  } else if (bmiResult < 18.4) {
+    window.location.href = "/underweight";
   }
 };
 
