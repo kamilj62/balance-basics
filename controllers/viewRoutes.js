@@ -41,7 +41,7 @@ router.get("/workout", ensureAuthenticated, async (req, res) => {
   }
 });
 
-router.get("/workout/:id", async (req, res) => {
+router.get("/workouts/:id", async (req, res) => {
   try {
     const exercise = await Workout.findByPk(req.params.id, {
       //include: [{ include: [{ model: User }] }],

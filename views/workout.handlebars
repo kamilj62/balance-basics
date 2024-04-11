@@ -1,7 +1,11 @@
-
 <div class="row">
+  <h2>
+    <a href="/workouts/{{id}}"></a>
+
+  </h2>
   <div class="col-auto">
-    <h2>Welcome, {{username}}</h2>
+    <h2>Welcome, {{name}}</h2>
+
   </div>
 </div>
 
@@ -58,11 +62,13 @@
             {{workout.workout}}
           </p>
           <div class="col-md-4 btn-delete">
-            <button
-              class="btn btn-sm btn-danger"
-              type="delete"
-              data-id="{{workout.id}}"
-            >DELETE</button>
+            {{#if workout.workout}}
+              <button
+                class="btn btn-sm btn-danger"
+                type="delete"
+                data-id="{{workout.id}}"
+              >DELETE</button>
+            {{/if}}
           </div>
         </div>
       {{/each}}

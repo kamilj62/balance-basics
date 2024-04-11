@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { User, Workout } = require("../../models");
 const { ensureAuthenticated } = require("../../utils/ensureAuthenticated");
 
-router.post("/", ensureAuthenticated, async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body);
 

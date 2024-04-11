@@ -13,6 +13,8 @@ const loginFormHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
 
+    console.log(response);
+
     if (response.ok) {
       // If successful, redirect the browser to the workout page
       document.location.replace("/workout");
@@ -35,6 +37,8 @@ const signupFormHandler = async (event) => {
       body: JSON.stringify({ name, email, password }),
       headers: { "Content-Type": "application/json" },
     });
+
+    console.log(response);
 
     if (response.ok) {
       document.location.replace("/workout");

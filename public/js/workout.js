@@ -52,10 +52,19 @@ const delButtonHandler = async (event) => {
 };
 
 // Add event listeners to the respective elements
-document
-  .querySelector(".new-workout-form")
-  .addEventListener("submit", newFormHandler);
+// document
+//   .querySelector(".new-workout-form")
+//   .addEventListener("submit", newFormHandler);
 
-document
-  .querySelector(".btn-delete")
-  .addEventListener("click", delButtonHandler);
+// document
+//   .querySelector(".btn-delete")
+//   .addEventListener("click", delButtonHandler);
+
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .querySelector(".new-workout-form")
+    .addEventListener("submit", newFormHandler);
+  document
+    .querySelector(".btn-delete")
+    .addEventListener("click", delButtonHandler);
+});

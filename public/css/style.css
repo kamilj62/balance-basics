@@ -9,13 +9,13 @@
 }
 
 /* General Styles */
-body.background-image {
+/* body.background-image {
     background-image: url('/public/images/Project-background.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
     padding: 0;
-   }
+   } */
    
    /* Container Styles */
    .justify-space-around {
