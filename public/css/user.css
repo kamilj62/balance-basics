@@ -1,23 +1,18 @@
 /* General Styles */
-body {
+:root {
+    --primary-color: #007bff;
+    --primary-hover-color: #0056b3;
+    --secondary-color: #f8f9fa;
+    --text-color: #333;
+    --border-color: #ddd;
+    --focus-border-color: #007bff;
+   }
+   
+   body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(--secondary-color);
     margin: 0;
     padding: 0;
-   }
-   
-   /* Container Styles */
-   .row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-   }
-   
-   .col-md-6 {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
    }
    
    /* Form Styles */
@@ -33,13 +28,14 @@ body {
    
    .form-input {
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 16px;
+    color: var(--text-color);
    }
    
    .form-input:focus {
-    border-color: #007bff;
+    border-color: var(--focus-border-color);
     outline: none;
    }
    
@@ -50,26 +46,19 @@ body {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-   }
-   
-   .btn-primary {
-    background-color: #007bff; /* Blue color for the button */
+    background-color: var(--primary-color);
     color: #fff;
    }
    
-   .btn-primary:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+   .btn:hover {
+    background-color: var(--primary-hover-color);
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
    }
    
    /* Responsive Styles */
    @media (max-width: 768px) {
-    .row {
-       flex-direction: column;
-    }
-   
-    .col-md-6 {
+    .form-group {
        width: 100%;
-       margin-bottom: 20px;
     }
    }
-   
