@@ -6,12 +6,13 @@ const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const helpers = require("./utils/helpers");
+const calendar = require("./utils/calender");
 
 const app = express();
 
 const PORT = process.env.PORT || 3001;
 
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ helpers, calendar });
 
 const sess = {
   secret: "Super secret secret",

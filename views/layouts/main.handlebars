@@ -1,20 +1,23 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>balance-basics</title>
     <link rel="stylesheet" href="/css/style.css" />
-    </head>
+  </head>
 
   <body class="background-image">
     <div class="justify-space-around">
       <header class="row">
-    <nav>
+        <nav>
           <ul class="navbar">
             <li><a class="link" href="/">Home</a></li>
             <li><a class="link" href="/workout">Workout</a></li>
-            <li><a class="link" href="/users">User stats</a></li>   
+            <li><a class="link" href="/users">User stats</a></li>
+            <link
+              href="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.css"
+              rel="stylesheet"
+            />
             <!-- Conditionally render login or logout links -->
             {{#if logged_in}}
 
@@ -26,12 +29,11 @@
               <li><a href="/login">login</a></li>
             {{/if}}
           </ul>
-        </nav>  
+        </nav>
       </header>
       <main class="container container-fluid mt-5">
         <!-- Render the sub layout -->
         {{{body}}}
-
       </main>
       <footer>
 
@@ -42,6 +44,11 @@
     {{#if logged_in}}
       <script src="/js/logout.js"></script>
     {{/if}}
- </body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.js"
+      defer
+    ></script>
+
+  </body>
 
 </html>
