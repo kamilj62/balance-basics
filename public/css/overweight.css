@@ -1,0 +1,49 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+   }
+   
+   /* Heading Styles */
+   #workout-template h1 {
+    color: #ff6347; /* Tomato color for heading */
+    text-align: center;
+    margin-bottom: 20px;
+   }
+   
+   #workout-template h1 a {
+    color: #007bff; /* Blue color for the link */
+    text-decoration: none;
+   }
+   
+   #workout-template h1 a:hover {
+    color: #0056b3; /* Darker blue on hover */
+   }
+   
+   /* Container Styles */
+   #workout-template .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   
+   #workout-template .col-auto {
+    padding: 20px;
+    background-color: #f0f8ff; /* AliceBlue color for the container */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   }
+   
+   /* Responsive Styles */
+   @media (max-width: 768px) {
+    #workout-template .row {
+       flex-direction: column;
+    }
+   
+    #workout-template .col-auto {
+       width: 100%;
+    }
+   }
+   
