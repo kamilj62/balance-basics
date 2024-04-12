@@ -16,15 +16,17 @@
     <form class="form new-workout-form">
       <div class="form-group">
         <label for="created_at-name">Workout created_at:</label>
+        <br>
         <input
           class="form-input"
           type="text"
-          id="input"
+          id="created_at"
           name="created_at"
         ></input>
       </div>
       <div class="form-group">
         <label for="workout-title">Workout title:</label>
+        <br>
         <input
           class="form-input"
           type="text"
@@ -32,10 +34,18 @@
           name="workout-title"
         />
       </div>
+
       <div class="form-group">
         <label for="workout">Workout:</label>
-        <textarea class="form-input" id="workout" name="workout"></textarea>
+        <br>
+        <input
+          class="form-input"
+          type="text"
+          id="workout"
+          name="workout"
+        />
       </div>
+      <br>
       <div class="form-group">
         <button
           type="submit"
@@ -61,8 +71,9 @@
           <p>
             {{workout.workout}}
           </p>
+          {{format_date workout.created_at}}
           <div class="col-md-4 btn-delete">
-            {{#if workout.workout}}
+            {{#if workout.workout}} 
               <button
                 class="btn btn-sm btn-danger"
                 type="delete"

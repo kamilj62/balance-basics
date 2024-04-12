@@ -6,7 +6,7 @@
 
 /* General Styles */
 body.background-image {
-    background-image: url('/public/images/Project-background.jpeg');
+    background-image: url('../images/Project-background.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
