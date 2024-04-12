@@ -5,12 +5,14 @@ const { ensureAuthenticated } = require("../utils/ensureAuthenticated.js");
 router.get("/", async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const workoutData = await Workout.findAll();
+    const workoutData = await Workout.findAll({
+      include: [{ model: User }],
+    });
 
     // Serialize data so the template can read it
-    const workouts = workoutData.map((blog) => blog.get({ plain: true }));
+    const workouts = workoutData.map((workout) => workout.get({ plain: true }));
 
-    // Pass serialized data and session flag into template
+    // Pass serialized data and session flag into the template
     res.render("homepage", {
       workouts,
       logged_in: req.session.logged_in,
